@@ -1,0 +1,38 @@
+package com.first;
+
+public class Student {
+	public static int length;
+	int id;
+	String name;
+	double marks[];
+	
+	public Student(int id, String name, double[] marks) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.marks = marks;
+	}
+	
+	public double totalMarks() {
+		double total=0.0;
+		for(int i = 0;i<marks.length;i++) {
+			total += marks[i];
+		}
+		return total;
+	}
+	
+	public double findAvg() {
+		return totalMarks()/marks.length;
+	}
+	
+	public String result() {
+		String result = "pass";
+		for(int i = 0;i<marks.length;i++) {
+			if(marks[i]<35) {
+				result = "fail";
+			}
+			
+		}
+		return result;
+	}
+}
